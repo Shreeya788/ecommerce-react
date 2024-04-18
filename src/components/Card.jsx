@@ -12,7 +12,7 @@ const Card = (props) => {
             {props.titleText}
           </p>
           <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-            {props.price}
+            ${props.price}
           </p>
         </div>
         <p className="block h-5 font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75 overflow-hidden">
