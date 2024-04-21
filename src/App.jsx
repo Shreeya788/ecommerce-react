@@ -1,11 +1,9 @@
-// import Card from "./components/Card";
-import Detail from "./components/Detail";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div>
-      {/* <Card /> */}
-      <Detail />
+      <div></div>
     </div>
   );
 }
