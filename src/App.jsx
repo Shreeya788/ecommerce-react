@@ -1,11 +1,8 @@
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-
+import Home from "./Pages/Home";
 function App() {
   return (
     <div>
-      <Nav />
-      <Footer />
+      <Home />
     </div>
   );
 }
