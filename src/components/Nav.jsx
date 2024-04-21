@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 
@@ -39,13 +40,14 @@ function Nav() {
               onClick={toggleSearchVisibility}
             />
           </div>
-          {/* Always visible search icon */}
-          {/* {!isSearchVisible && (
-            <FaSearch
-              className="text-gray-400 cursor-pointer"
-              onClick={toggleSearchVisibility}
-            />
-          )} */}
+          {/* My Cart option */}
+          <Link to="/mycart">
+            {" "}
+            {/* Add Link to navigate to MyCart component */}
+            <button className="border-black border-2 px-6 py-2 bg-black text-white rounded-md">
+              My Cart
+            </button>
+          </Link>
           {/* Other content */}
           <ul className="flex text-gray-800 space-x-6 text-lg items-center">
             <li>Categories</li>

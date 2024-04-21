@@ -1,23 +1,24 @@
 import PropTypes from "prop-types";
 
-const Card = (props) => {
+const Card = ({ product }) => {
   return (
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border max-w-sm h-[80%] rounded-xl ">
       <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
-        <img src={props.image} alt="" className="object-cover max-h-90 w-fit" />
+        {product.image && (
+          <img src={product.image} alt={product.title} className="object-cover max-h-90 w-full" />
+        )}
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between mb-2">
           <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-            {props.titleText}
+            {product.title}
           </p>
           <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-            ${props.price}
+            ${product.price}
           </p>
         </div>
         <p className="block h-5 font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75 overflow-hidden">
-          {/* Display only two lines of description */}
-          <span className="truncate">{props.description}</span>
+          <span className="truncate">{product.description}</span>
         </p>
       </div>
       <div className="p-6 pt-0">
@@ -33,10 +34,12 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  image: PropTypes.arrayOf(PropTypes.string).isRequired,
-  titleText: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  product: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Card;
